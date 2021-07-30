@@ -1,5 +1,6 @@
 # Distributed Urandom Increment Global CoOperative
-/Willtech/DistributedUrandom is the Distributed Urandom Increment Global CoOperative project.
+/Willtech/DistributedUrandom is the Distributed Urandom Increment Global CoOperative project.  
+**DUIGCO API**
 
 > ### Willtech
 >@Willtech101 - 3:03 AM · Jul 31, 2021  
