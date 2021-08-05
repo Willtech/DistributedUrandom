@@ -1,6 +1,6 @@
 #Main API Node Specification
 
-#Description
+##Description
 The API will operate from an independant node Pi 4, the first of which will include, and further nodes optionally, a CCD sensor to monitor the Hard Disk activity light of a seperate computer. The urandom on the API node will be randomly incremented.
 
 The API node will perform the following:
@@ -10,3 +10,16 @@ The API node will perform the following:
 * Participate in an optional group to distribute requests on one global URI for API calls on the project.
 
 *The remote node is seperately provided for the service user.*
+
+###Update by random
+request _delay
+python launch with input for delay to request new delay to launch self
+
+###Update by sensor
+On input change request random from _delay
+
+###API Request
+According to manual for [rand_int](https://php.willtech.net.au/manual/en/function.random-int.php) the [getrandom(2)](https://man7.org/linux/man-pages/man2/getrandom.2.html) syscall is used and this makes use of /dev/urandom
+
+
+**Need to turn off caching headers in php config**
