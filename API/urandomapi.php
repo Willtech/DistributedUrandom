@@ -6,16 +6,18 @@ function api ($bytes=512) {
   return base64_encode(random_bytes($bytes));
 }
 
-//function for delay
+//function for delay. Return is integer.
 function delay ($ticker=3.14) {
   return random_int(0, $ticker);
 }
 
+//Call api function and export to webhost as string.
 if(isset($_GET['api'])) {
   echo api(512);
   exit;
 }
 
+//Call delay function and export to webhost as string.
 if(isset($_GET['delay'])) {
   echo delay(3.14);
   exit;
