@@ -1,5 +1,16 @@
 <?php
 //According to manual for rand_bytes and random_int the getrandom(2) syscall is used and this makes use of /dev/urandom
+/* ************************************************ */
+/*                                                  */
+/* Distributed Urandom Increment Global CoOperative */
+/*                                                  */
+/* This file is part of the "DUIGCO API" package    */
+/* Produced for: DUIGCO API                         */
+/*                                                  */
+/* Source Code produced by Willtech 2021            */
+/* v0.1 hand coded by HRjJ                          */
+/*                                                  */
+/* ************************************************ */
 
 //Set headers for no-cache
 header('Expires: Sat, 04 Jan 2014 00:00:00 GMT');
