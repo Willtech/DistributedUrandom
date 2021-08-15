@@ -5,5 +5,5 @@ This is for running on a remote computer where you wish to ensure random is plun
 Install php-cli  
 run `php duigcorempte.php`  
 Check result.  
-Debug output is available if required.
+Debug output is removed in this version.
 

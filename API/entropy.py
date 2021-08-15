@@ -17,9 +17,6 @@ api_entropy = "http://127.0.0.1/urandomapi.php?api"
 #entropy_burn = True
 entropy_burn = False
 
-#debug = True
-debug = False
-
 ## MAIN Program
 while True:
  try:
@@ -52,9 +49,6 @@ while True:
    if e.status_code == 200:
     print "Entropy Burn"
     entropy = e.text[0:1000]
-    if debug == True:
-     print entropy
-     print(len(entropy)) #684
    else:
     print "No Entropy Burn"
   except:

@@ -22,9 +22,6 @@ gpio_pin = 25
 #entropy_burn = True
 entropy_burn = False
 
-#debug = True
-debug = False
-
 #Configure the GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -69,9 +66,6 @@ while True:
     if e.status_code == 200:
      print "Entropy Burn"
      entropy = e.text[0:1000]
-     if debug == True:
-      print entropy
-      print(len(entropy)) #684
     else:
      print "No Entropy Burn"
    except:
@@ -115,12 +109,8 @@ while True:
     if e.status_code == 200:
      print "Entropy Burn"
      entropy = e.text[0:1000]
-     if debug == True:
-      print entropy
-      print(len(entropy)) #684
     else:
      print "No Entropy Burn"
    except:
     print "Invalid API response detected"
     print "No Entropy Burn"
-

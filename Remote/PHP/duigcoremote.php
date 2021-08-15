@@ -20,9 +20,6 @@ header('Pragma: no-cache');
 //Configure Paraameters
 $api_url = "https://api.duigco.org/urandomapi.php?api";
 
-//$debug = True;
-$debug = False;
-
 //Define Functions
 function from_base256($string, $to_base = 10) {
     $number = "";
@@ -39,11 +36,6 @@ if (strlen ($R) != 684) {
  exit;
 }
 
-if ($debug) {
- echo ("API Response: " . $R . "\r\n");
-}
-
-
 //convert base 10
 $N = "";
 $E = base64_decode($R);
@@ -51,28 +43,12 @@ for($i=0; $i<strlen($E); $i++) {
  $N .= ord($E{$i});
 }
 
-if ($debug) {
- echo ("Base 10: " . $N . "\r\n");
-}
-
 //Choose Random
 $Q = random_int(0, (strlen($N))-3);
 
-if ($debug) {
- echo ("Position: " . $Q . "\r\n");
-}
-
 $number =  substr ($N, $Q, 3);
 
-if ($debug) {
- echo ("Random Number: " . $number . "\r\n");
-}
-
 $rand = random_int (0, $number);
-
-if ($debug) {
- echo ("Result Rand Entropy Number: " . $rand . "\r\n");
-}
 
 echo ("Entropy Created. \r\n");
 ?>

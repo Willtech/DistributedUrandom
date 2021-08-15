@@ -5,5 +5,5 @@ This is for running on a remote computer where you wish to ensure random is plun
 Setup requires `pip install requests` if not installed.  
 run `duigcoremote.py`  
 Check result.  
-Debug output is available if required.  
+Debug output is available if requireremoved in this version.  
 
