@@ -16,6 +16,7 @@ header('Expires: Sat, 04 Jan 2014 00:00:00 GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate');
 header('Cache-Control: post-check=0, pre-check=0', FALSE);
 header('Pragma: no-cache');
+header('X-Powered-By: Willtech');
 
 //Configure Paraameters
 $api_url = "https://api.duigco.org/urandomapi.php?api";
@@ -24,6 +25,7 @@ $api_url = "https://api.duigco.org/urandomapi.php?api";
 $debug = False;
 
 //Define Functions
+//Function Found on user responses [PHP base_convert](https://php.willtech.net.au/manual/en/function.base-convert.php#43261) code:
 function from_base256($string, $to_base = 10) {
     $number = "";
     for($i=0; $i<strlen($string); $i++) {
@@ -32,11 +34,12 @@ function from_base256($string, $to_base = 10) {
     return base_convert($number, 2, $to_base);
 }
 
+
 //Main Program
 $R  = file_get_contents($api_url);
 if (strlen ($R) != 684) {
- echo ("Bad Response \r\n");
- exit;
+ header("HTTP/1.1 418 Gathering Entropy Failed");
+ exit();
 }
 
 if ($debug) {
