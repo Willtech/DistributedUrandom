@@ -1,16 +1,16 @@
 <?php
-//According to manual for rand_bytes and random_int the getrandom(2) syscall is used and this makes use of /dev/urandom
 /* ************************************************ */
 /*                                                  */
 /* Distributed Urandom Increment Global CoOperative */
 /*                                                  */
-/* This file is part of the "DUIGCO API" package    */
+/* This file is part of the "DUIGCO Study" package  */
 /* Produced for: DUIGCO API                         */
 /*                                                  */
 /* Source Code produced by Willtech 2021            */
 /* v0.1 hand coded by HRjJ                          */
 /*                                                  */
 /* ************************************************ */
+//According to manual for rand_bytes and random_int the getrandom(2) syscall is used and this makes use of /dev/urandom
 
 //Set headers for no-cache
 header('Expires: Sat, 04 Jan 2014 00:00:00 GMT');
@@ -19,26 +19,27 @@ header('Cache-Control: post-check=0, pre-check=0', FALSE);
 header('Pragma: no-cache');
 header('X-Powered-By: Willtech');
 
-//function for API call. Return is data there are no descriptors.
-function api ($bytes=512) {
-  return base64_encode(random_bytes($bytes));
-}
+//control generate 10,000 cells of random data
+for ($h = 1; $h <= 100; $h++) {
 
-//function for delay. Return is integer.
-function delay ($ticker=3.14) {
-  return random_int(0, $ticker);
-}
+  for ($i = 1; $i <= 100; $i++) {
 
-//Call api function and export to webhost as string.
-if(isset($_GET['api'])) {
-  echo api(512);
-  exit;
-}
+    echo (random_int(1,100));
 
-//Call delay function and export to webhost as string.
-if(isset($_GET['delay'])) {
-  echo delay(3.14);
-  exit;
+    if ($i < 100) {
+
+    echo (",");
+
+    }
+
+  }
+
+  if ($h < 100) {
+
+    echo ("\r\n");
+
+  }
+
 }
 
 exit();
