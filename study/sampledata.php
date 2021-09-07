@@ -70,7 +70,7 @@ for ($h = 1; $h <= 100; $h++) {
 
     }
 
-    echo (random_int(1,100));
+    echo (random_int(0,100));
 
     if ($i < 100) {
 
