@@ -12,8 +12,6 @@
 /* ************************************************ */
 //According to manual for rand_bytes and random_int the getrandom(2) syscall is used and this makes use of /dev/urandom
 
-ob_start();
-
 //Set headers for no-cache
 header('Expires: Sat, 04 Jan 2014 00:00:00 GMT');
 header('Cache-Control: no-store, no-cache, must-revalidate');
@@ -22,7 +20,7 @@ header('Pragma: no-cache');
 header('X-Powered-By: Willtech');
 
 //Configure Paraameters
-//$api_url = "http://127.0.0.1/urandomapi.php?api";
+//$api_url = "http://127.0.0.1/urandomapi.php?api"; //If you get a 502 Bad Gateway response it is internal routing. Easier to use eth0 interface address as external source.
 $api_url = "https://api.duigco.org/urandomapi.php?api";
 
 //$debug = True;
@@ -79,9 +77,6 @@ for ($h = 1; $h <= 100; $h++) {
       echo (",");
 
     }
-    ob_flush();
-    flush();
-
 
   }
 
@@ -90,8 +85,6 @@ for ($h = 1; $h <= 100; $h++) {
     echo ("\r\n");
 
   }
-  ob_flush();
-  flush();
 
 }
 
