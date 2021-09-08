@@ -1,5 +1,5 @@
-#Instructions for API
-##Setup
+#Instructions for API  
+##Setup  
 **Instructions:** 
  - [] On Raspberry Pi setup Raspbian OS Lite is sufficient. 
  - [] Install nginx, php-fpm, fail2ban, supervisor, python3, python-requests, webalizer
