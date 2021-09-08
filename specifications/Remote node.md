@@ -1,6 +1,6 @@
-#Main Remote Node Specification
+# Main Remote Node Specification
 
-#Description
+## Description
 The Remote Node provides access to the Distributed Urandom Increment Global CoOperative to provide decent entropy in order to increment the urandom on the local computer. 
 
 The remote node will perform the following:
