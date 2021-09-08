@@ -12,8 +12,13 @@
  - [] Confirm everything is operating correctly
  - [] Notify the DUIGCO API project so that your API URL can be included in the load balance to contribute to this global project
  - [] If also gathering entropy from the Hard Disk light on an external computer you will need to run `externalentropy.py` using supervisor.
- - [] If the Hard Disk light on a seperate computer is another Raspberry Pi you can configure the HDD light output to operate some pins there. 
- - [] On the seperate Raspberry Pi edit `/boot/config.txt` and insert line `dtparam=act_led_gpio=18` checking there are no conflicts. Does not seem to work with every GPIO but might work with others eg. try GPIO 18-21 then watching to correctly connect GND at both ends bridge to pins 12 & 14 (GPIO 18) to 20 & 22 (GPIO 25) on the Raspberry Pi running the DUIGCO API
+ - [] If the Hard Disk light on a seperate computer is another Raspberry Pi you can configure the HDD light output to operate some pins there. On the seperate Raspberry Pi edit `/boot/config.txt` and insert line `dtparam=act_led_gpio=18`<sup>\[[1]\]</sup> checking there are no conflicts. Does not seem to work with every GPIO but might work with others eg. try GPIO 18-21 then watching to correctly connect GND at both ends bridge to pins 12 & 14 (GPIO 18) to 20 & 22 (GPIO 25) on the Raspberry Pi running the DUIGCO API
+ 
+rel:  
+[\[1\]][1] [Act Led GPIO][1] - How can I extend Act Led via gpio on B+ Raspbian?
+
+ 
+**You can bypass the traditional requirements of hosting to have port forwarding and static IP addressed by using ARGO Tunnel from CloudFlare**
 
 ## Components
 ### urandomapi.php
@@ -31,3 +36,5 @@ Collects entropy from an external source i.e. the HDD light on a seperate comput
 Setup requires `pip install requests` if not installed.  
 `chmod +x ./entropy.py` to allow execution  
 CTRL + C twice to exit  
+
+[1]: https://www.raspberrypi.org/forums/viewtopic.php?p=700603 "Act Led GPIO"
