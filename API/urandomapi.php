@@ -11,6 +11,11 @@
 /* v0.1 hand coded by HRjJ                          */
 /*                                                  */
 /* ************************************************ */
+//Protect the API transfer any non validating requests to DUIGCO.org website
+if ($_SERVER['REQUEST_URI'] != "/urandomapi.php?api" && $_SERVER['REQUEST_URI'] != "/urandomapi.php?delay") {
+  header("Location: https://duigco.org/",TRUE,403);
+  die(header('refresh:12;url=https://duigco.org/'));
+}
 
 //Set headers for no-cache
 header('Expires: Sat, 04 Jan 2014 00:00:00 GMT');
