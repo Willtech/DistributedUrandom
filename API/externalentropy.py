@@ -36,7 +36,7 @@ while True:
  while GPIO.input(gpio_pin) == True:
   while GPIO.input(gpio_pin) == True:
    print "Sleep True"
-   time.sleep(0)
+   time.sleep(1)
 
   try:
    ##get value for delay 
@@ -82,7 +82,7 @@ while True:
  while GPIO.input(gpio_pin) == False:
   while GPIO.input(gpio_pin) == False:
    print "Sleep False"
-   time.sleep(0)
+   time.sleep(1)
 
   try:
    ##get value for delay 
@@ -123,4 +123,3 @@ while True:
    except:
     print "Invalid API response detected"
     print "No Entropy Burn"
-
