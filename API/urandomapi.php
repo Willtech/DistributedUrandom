@@ -36,13 +36,13 @@ function delay ($ticker=3.14) {
 
 //Call api function and export to webhost as string.
 if(isset($_GET['api'])) {
-  echo api(512);
+  echo api();
   exit;
 }
 
 //Call delay function and export to webhost as string.
 if(isset($_GET['delay'])) {
-  echo delay(3.14);
+  echo delay();
   exit;
 }
 
